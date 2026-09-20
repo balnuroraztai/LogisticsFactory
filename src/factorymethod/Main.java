@@ -5,9 +5,9 @@ public class Main {
     public static void main(String[] args) {
 
         Logistics roadLogistics = new RoadLogistics();
-        roadLogistics.planDelivery();
+        roadLogistics.planDelivery("Medical equipment", "Karaganda");
 
         Logistics seaLogistics = new SeaLogistics();
-        seaLogistics.planDelivery();
+        seaLogistics.planDelivery("Furniture", "Aktau");
     }
 }

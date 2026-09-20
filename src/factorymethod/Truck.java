@@ -3,7 +3,11 @@ package factorymethod;
 public class Truck implements Transport {
 
     @Override
-    public void deliver() {
-        System.out.println("Delivering cargo by road in a truck.");
+    public void deliver(String cargo, String destination) {
+        System.out.println(
+                "Delivering \"" + cargo +
+                        "\" to \"" + destination +
+                        "\" by Truck."
+        );
     }
 }

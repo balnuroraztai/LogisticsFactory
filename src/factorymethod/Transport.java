@@ -1,5 +1,5 @@
 package factorymethod;
 
 public interface Transport {
-    void deliver();
+    void deliver(String cargo, String destination);
 }
