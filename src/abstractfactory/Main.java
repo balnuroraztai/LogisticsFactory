@@ -4,21 +4,21 @@ import factorymethod.Logistics;
 import factorymethod.RoadLogistics;
 import factorymethod.SeaLogistics;
 
-public class Main {
+import java.util.Scanner;
 
+public class Main {
     public static void main(String[] args) {
 
-        if (args.length < 4) {
-            System.out.println(
-                    "Usage: java Main <ROAD|SEA> <WINDOWS|MACOS> <cargo> <destination>"
-            );
-            return;
-        }
+        Scanner scanner = new Scanner(System.in);
 
-        String transportType = args[0].toUpperCase();
-        String osType = args[1].toUpperCase();
-        String cargo = args[2];
-        String destination = args[3];
+        System.out.print("Choose transport (ROAD/SEA): ");
+        String transportType = scanner.nextLine().toUpperCase();
+
+        System.out.print("Choose OS (WINDOWS/MACOS): ");
+        String osType = scanner.nextLine().toUpperCase();
+
+        String cargo = "Cargo";
+        String destination = "Karaganda";
 
         Logistics logistics;
 
@@ -44,5 +44,7 @@ public class Main {
 
         Application app = new Application(guiFactory, logistics);
         app.run(cargo, destination);
+
+        scanner.close();
     }
 }
